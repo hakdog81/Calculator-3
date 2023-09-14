@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .calculator {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .calculator input[type="text"] {
+            width: 100%;
+            font-size: 24px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .calculator .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+        }
+
+        .calculator .buttons button {
+            font-size: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f2f2f2;
+        }
+
+        .calculator .buttons button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .calculator .buttons button.clear {
+            grid-column: span 2;
+        }
+
+        .calculator .buttons button.equals {
+            grid-column: span 4;
+            background-color: #ff5722;
+            color: #fff;
+        }
+
+        .calculator .buttons button.equals:hover {
+            background-color: #d84315;
+        }
+
+        #result {
+            display: none;
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        #picture {
+            display: none;
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button onclick="addToDisplay('7')">7</button>
+            <button onclick="addToDisplay('8')">8</button>
+            <button onclick="addToDisplay('9')">9</button>
+            <button onclick="addToDisplay('+')">+</button>
+            <button onclick="addToDisplay('4')">4</button>
+            <button onclick="addToDisplay('5')">5</button>
+            <button onclick="addToDisplay('6')">6</button>
+            <button onclick="addToDisplay('-')">-</button>
+            <button onclick="addToDisplay('1')">1</button>
+            <button onclick="addToDisplay('2')">2</button>
+            <button onclick="addToDisplay('3')">3</button>
+            <button onclick="addToDisplay('*')">*</button>
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button onclick="addToDisplay('0')">0</button>
+            <button onclick="addToDisplay('.')">.</button>
+            <button class="equals" onclick="showMessage()">=</button>
+        </div>
+    </div>
+
+    <div id="result">Mahal kita<3</div>
+    <img id="picture" src="/tgt.jpg" alt="Mahal kita<3">
+  
+
+    <script>
+        function addToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = "";
+        }
+
+        function showMessage() {
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('picture').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
